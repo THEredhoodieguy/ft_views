@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Work Order View Page</title>
+        <link rel="stylesheet"  href="style.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1>Barrels</h1>
+        <!-- Rows for Barrels -->
+        <?php foreach($s_parts as $row):?>
+            <?php if(strpos($row['num'], "FT-025350-231") === 0):?>
+            <div class="part">
+                <div class="attrib part_num"><div class="title">Item Number:</div><div class="content"><?php echo $row['num']; ?></div></div>
+                <div class="attrib part_name"><div class="title">Item Name:</div><div class="content"><?php echo $row['description']; ?></div></div>
+                <div class="attrib part_on_hand"><div class="title">Qty On Hand:</div><div class="content"><?php echo $row['qtyOnHand']; ?></div></div>
+                <div class="attrib part_needed"><div class="title">Qty Needed:</div><div class="content"><?php echo $row['qtyNeeded']; ?></div></div>
+            </div>
+            <?php endif;?>
+        <?php endforeach;?>
+        </div>
+        <p></p>
+        <p></p>
+
+        <div class="container">
+        <h1>Receivers</h1>
+        <!-- Rows for Receivers -->
+        <?php foreach($s_parts as $row): ?>
+            <?php if(strpos($row['num'], "FT-025350-230") === 0): ?>
+            <div class="part">
+                <div class="attrib part_num"><div class="title">Item Number:</div><div class="content"><?php echo $row['num']; ?></div></div>
+                <div class="attrib part_name"><div class="title">Item Name:</div><div class="content"><?php echo $row['description']; ?></div></div>
+                <div class="attrib part_on_hand"><div class="title">Qty On Hand:</div><div class="content"><?php echo $row['qtyOnHand']; ?></div></div>
+                <div class="attrib part_needed"><div class="title">Qty Needed:</div><div class="content"><?php echo $row['qtyNeeded']; ?></div></div>
+            </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        </div>
+    </body>
+</html>
